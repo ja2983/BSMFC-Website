@@ -1,0 +1,157 @@
+/* Global resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fafafa;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #000;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.nav-title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav a.active,
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin-bottom: 1rem;
+  list-style: disc inside;
+}
+
+.filter-menu {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filter-menu button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.filter-menu button.active {
+  background: #0077cc;
+  color: #fff;
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.sponsor-card img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.sponsor-card img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ─── Footer ─── */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+footer p {
+  margin-bottom: 8px;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .social-icons a img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-icons a:hover img {
+  transform: scale(1.2);
+}

@@ -1,0 +1,256 @@
+/* ─── Import Roboto Font ───────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+/* ─── Base Reset ───────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #000;
+  height: 100%;
+}
+
+body {
+  text-align: center;
+}
+
+.team-profile,
+.staff-grid,
+.carousel-wrapper,
+footer {
+  text-align: center;
+}
+
+/* ─── Navigation Header ───────────────────────────── */
+header {
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  padding: 6px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ccc;
+}
+
+/* ─── Team Profile Banner ─────────────────────────── */
+.team-profile {
+  text-align: center;
+  margin-top: 80px;
+  padding: 0 20px;
+}
+
+.team-banner {
+  width: 50%;
+  max-width: 600px;
+  margin: 20px auto;
+  border: 2px solid #000;
+  border-radius: 4px;
+  display: block;
+}
+
+/* ─── Staff & Coach Cards ─────────────────────────── */
+.staff-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.staff-card {
+  width: 220px;
+  min-height: 320px; /* Optional, for visual consistency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.staff-card p {
+  margin-top: 10px;
+  font-size: 1rem;
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+
+
+/* ─── Sponsor Carousel ───────────────────────────── */
+.carousel-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.sponsor-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  justify-content: center;
+}
+
+.sponsor-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.sponsor-slide {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.sponsor-slide img {
+  width: 144px;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+
+.sponsor-slide img[src=""],
+.sponsor-slide img:not([src]) {
+  display: none;
+}
+
+/* ─── Carousel Buttons ───────────────────────────── */
+.carousel-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 1.8rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-btn:hover {
+  opacity: 1;
+}
+
+.carousel-btn.left {
+  order: -1;
+}
+
+.carousel-btn.right {
+  order: 1;
+}
+
+/* ─── Footer Section ─────────────────────────────── */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+footer p {
+  margin-bottom: 8px;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .social-icons a img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+/* ─── Mobile Responsiveness ───────────────────────── */
+@media screen and (max-width: 600px) {
+  .team-banner,
+  .carousel-wrapper {
+    width: 90%;
+  }
+
+  .staff-card img {
+    width: 140px;
+  }
+
+  .sponsor-slide img {
+    width: 120px;
+  }
+}
+
+.fixture-section {
+  margin: 60px 20px 40px;
+  text-align: center;
+}
+
+.fixture-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.fixture-placeholder {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #333;
+}
+
+.team-section {
+  margin-bottom: 40px;
+}

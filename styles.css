@@ -1,0 +1,936 @@
+/* ────────────────────────────────────────────────────────────────
+   styles.css — Unified stylesheet for index, sponsors, committee,
+                 contact, teams, plus shared components
+   ──────────────────────────────────────────────────────────────── */
+
+/* ─── Import Font ──────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+/* ─── Reset & Base ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+/* ─── Main Container ──────────────────────────────────────────── */
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ─── Sponsors‐page override ──────────────────────────────────── */
+/* Prevent main from flex‐growing on sponsors page */
+body.sponsors-page main {
+  flex: 0 0 auto;
+}
+
+/* ─── Navigation Bar (shared) ────────────────────────────────── */
+header {
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+.nav-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ccc;
+}
+
+/* ─── Footer (shared) ─────────────────────────────────────────── */
+/* base footer styling */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* sticky‐footer on all but sponsors page */
+body:not(.sponsors-page) footer {
+  margin-top: auto;
+}
+
+/* fix: neutralize gap on sponsors page footer */
+body.sponsors-page footer {
+  margin-top: 0;
+}
+
+footer p {
+  margin-bottom: 8px;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .social-icons a img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+/* ─── Homepage Styles ─────────────────────────────────────────── */
+.home-intro {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.home-intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.home-intro p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.homepage-banner {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.banner-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Committee Page Styles ──────────────────────────────────── */
+.committee-section {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.committee-section h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.committee-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.committee-card {
+  background-color: #f4f4f4;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 20px;
+  width: 240px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.committee-card:hover {
+  transform: scale(1.03);
+}
+
+.committee-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.committee-card p {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.committee-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+  border: 2px solid #000;
+  margin-bottom: 10px;
+}
+
+.email-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.email-button:hover {
+  background-color: #444;
+}
+
+/* ─── Sponsors Page Styles ───────────────────────────────────── */
+/* tighten up gutters on sponsors page */
+body.sponsors-page .filter-menu {
+  margin-bottom: 1rem;
+}
+
+body.sponsors-page .sponsors-grid {
+  margin-bottom: 1rem;
+}
+
+.sponsors-intro h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-menu {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filter-menu button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.filter-menu button.active,
+.filter-menu button:hover {
+  background: #0077cc;
+  color: #fff;
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 3rem;
+}
+
+.sponsor-card img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.sponsor-card img:hover {
+  transform: scale(1.05);
+}
+
+/* ─── Contact Page Styles ────────────────────────────────────── */
+.contact-info {
+  text-align: center;
+  padding: 40px 20px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.contact-info a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.contact-info a:hover {
+  color: #444;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+input,
+textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.map-section {
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 1000px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ─── Teams Page Styles ─────────────────────────────────────── */
+.team-grid {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.team-grid h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 60px 0 30px;
+  border-bottom: 3px solid #000;
+  padding-bottom: 10px;
+}
+
+.teams-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  margin-bottom: 40px;
+}
+
+.team-card {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease;
+  max-width: 180px;
+  width: 100%;
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: scale(1.02);
+}
+
+.team-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background-color: #fff;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.team-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.team-card p {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.team-card:hover p {
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ─── Teams Page: Centralised Layout ───────────────────────────────── */
+body.teams-page .team-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+body.teams-page .team-grid h1 {
+  width: 100%;
+}
+
+body.teams-page .teams-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  justify-content: center;
+  justify-items: center;
+  gap: 20px;
+}
+
+body.teams-page .team-card {
+  margin: 0 auto;
+}
+
+/* ─── Carousel (where used) ───────────────────────────────────── */
+.carousel-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.sponsor-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+}
+
+.sponsor-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 1.8rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-btn:hover {
+  opacity: 1;
+}
+
+.carousel-btn.left {
+  order: -1;
+}
+
+.carousel-btn.right {
+  order: 1;
+}
+
+.sponsor-slide {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.sponsor-slide img {
+  width: 144px;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+
+.sponsor-slide img[src=""],
+.sponsor-slide img:not([src]) {
+  display: none;
+}
+
+/* ─── Fixtures & Highlights (optional) ───────────────────────── */
+.highlight-block {
+  background-color: #f9f9f9;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.highlight-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.highlight-block li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.fixture-section {
+  text-align: center;
+  margin: 60px 20px 40px;
+}
+
+.fixture-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.fixture-embed {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ─── Responsive Breakpoints ──────────────────────────────────── */
+@media screen and (max-width: 900px) {
+  .teams-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sponsor-carousel,
+  .carousel-wrapper,
+  .team-banner,
+  .homepage-banner {
+    width: 90%;
+    max-width: none;
+  }
+
+  .staff-card img,
+  .sponsor-slide img {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  nav ul li a {
+    display: block;
+    padding: 8px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .teams-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .committee-card,
+  .team-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .committee-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-intro h1 {
+    font-size: 2rem;
+  }
+
+  .home-intro p {
+    font-size: 1rem;
+  }
+}
+
+/* ─── Import Roboto Font ───────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+/* ─── Base Reset ───────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #000;
+  height: 100%;
+}
+
+body {
+  text-align: center;
+}
+
+.team-profile,
+.staff-grid,
+.carousel-wrapper,
+footer {
+  text-align: center;
+}
+
+/* ─── Navigation Header ───────────────────────────── */
+header {
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  padding: 6px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ccc;
+}
+
+/* ─── Team Profile Banner ─────────────────────────── */
+.team-profile {
+  text-align: center;
+  margin-top: 80px;
+  padding: 0 20px;
+}
+
+.team-banner {
+  width: 50%;
+  max-width: 600px;
+  margin: 20px auto;
+  border: 2px solid #000;
+  border-radius: 4px;
+  display: block;
+}
+
+/* ─── Staff & Coach Cards ─────────────────────────── */
+.staff-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.staff-card {
+  width: 220px;
+  min-height: 320px; /* Optional, for visual consistency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.staff-card p {
+  margin-top: 10px;
+  font-size: 1rem;
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* ─── Sponsor Carousel ───────────────────────────── */
+.carousel-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.sponsor-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  justify-content: center;
+}
+
+.sponsor-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.sponsor-slide {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.sponsor-slide img {
+  width: 144px;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+
+/* Hide broken or missing sponsor images */
+.sponsor-slide img[src=""],
+.sponsor-slide img:not([src]) {
+  display: none;
+}
+
+/* ─── Carousel Buttons ───────────────────────────── */
+.carousel-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 1.8rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-btn:hover {
+  opacity: 1;
+}
+
+.carousel-btn.left {
+  order: -1;
+}
+
+.carousel-btn.right {
+  order: 1;
+}
+
+/* ─── Footer Section ─────────────────────────────── */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+footer p {
+  margin-bottom: 8px;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .social-icons a img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+/* ─── Mobile Responsiveness ───────────────────────── */
+@media screen and (max-width: 600px) {
+  .team-banner,
+  .carousel-wrapper {
+    width: 90%;
+  }
+
+  .staff-card img {
+    width: 140px;
+  }
+
+  .sponsor-slide img {
+    width: 120px;
+  }
+}
+
+.fixture-section {
+  margin: 60px 20px 40px;
+  text-align: center;
+}
+
+.fixture-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.fixture-placeholder {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #333;
+}
+
+.team-section {
+  margin-bottom: 40px;
+}
+
+/* ─── U8-Blacks Page Sponsors Grid ─────────────────────────── */
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.sponsor-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 992px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .sponsors-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sponsors – Bugbrooke St. Michaels FC</title>
+
+  <!-- Global stylesheet -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <!-- Page-specific overrides to tighten spacing and disable sticky-footer gap -->
+  <style>
+    /* reduce the big gutters on this page */
+    .sponsors-page .filter-menu {
+      margin-bottom: 1rem;
+    }
+    .sponsors-page .sponsors-grid {
+      margin-bottom: 1rem;
+    }
+    /* neutralise margin-top: auto on footer */
+    .sponsors-page footer {
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body class="sponsors-page">
+  <!-- Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-brand">
+        <img src="../images/logo.png" alt="Club Logo" class="nav-logo" />
+        <span class="nav-title">BSMFC</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../Main Site Pages/index.html">Home</a></li>
+          <li><a href="../Main Site Pages/news.html">News &amp; Events</a></li>
+          <li><a href="../Main Site Pages/committee.html">The Committee</a></li>
+          <li><a href="../Main Site Pages/sponsors.html" class="active">Our Sponsors</a></li>
+          <li><a href="../Main Site Pages/teams.html">Our Teams</a></li>
+          <li><a href="../Main Site Pages/contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Sponsors</h1>
+
+    <section id="sponsorship-info">
+      <h2>Sponsorship Info</h2>
+      <p>
+        Bugbrooke St. Michaels Football Club are extremely grateful for the support
+        we receive from our generous sponsors, without whom we would struggle to provide
+        our players with the access they have to kit and facilities.
+      </p>
+      <ul>
+        <li>Kit &amp; Leisurewear Sponsorship (Adult &amp; Youth)</li>
+        <li>Player Sponsorship</li>
+        <li>Pitch Side Advertising</li>
+        <li>Match Day Sponsorship</li>
+        <li>Youth Tournament Sponsorship</li>
+        <li>Media Sponsorship (Social Media, Website etc.)</li>
+      </ul>
+      <p>
+        If you’re interested in sponsoring, please get in touch so we can discuss
+        the best package for you.
+      </p>
+    </section>
+
+    <div class="filter-menu">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="website-sponsor">Website Sponsor</button>
+      <button data-filter="kit-sponsors">Kit Sponsors</button>
+      <button data-filter="general-club-sponsors">General Club Sponsors</button>
+    </div>
+
+    <section id="website-sponsor" class="sponsor-section">
+      <h2>Website Sponsor</h2>
+      <div class="sponsors-grid">
+        <div class="sponsor-card">
+          <a href="#">
+            <img src="assets/sponsors/website-sponsor.png"
+                 alt="Website Sponsor Name" loading="lazy" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="kit-sponsors" class="sponsor-section">
+      <h2>Kit Sponsors</h2>
+      <div class="sponsors-grid">
+        <div class="sponsor-card">
+          <img src="assets/sponsors/first-team.png"
+               alt="First Team Sponsor" loading="lazy" />
+        </div>
+        <div class="sponsor-card">
+          <img src="assets/sponsors/reserve-team.png"
+               alt="Reserve Team Sponsor" loading="lazy" />
+        </div>
+        <div class="sponsor-card">
+          <img src="assets/sponsors/ladies.png"
+               alt="Ladies Team Sponsor" loading="lazy" />
+        </div>
+        <!-- add U18s, U16s, U15s, U14s, U13s, U11s, U8s… -->
+      </div>
+    </section>
+
+    <section id="general-club-sponsors" class="sponsor-section">
+      <h2>General Club Sponsors</h2>
+      <div class="sponsors-grid">
+        <div class="sponsor-card">
+          <img src="assets/sponsors/general-1.png"
+               alt="General Club Sponsor 1" loading="lazy" />
+        </div>
+        <div class="sponsor-card">
+          <img src="assets/sponsors/general-2.png"
+               alt="General Club Sponsor 2" loading="lazy" />
+        </div>
+        <!-- additional general sponsors -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© Bugbrooke St. Michaels FC</p>
+    <div class="footer-content">
+      <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
+        <img src="../images/facebook-icon.svg" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/yourpage" target="_blank" aria-label="Instagram">
+        <img src="../images/instagram-icon.svg" alt="Instagram" />
+      </a>
+      <a href="https://www.tiktok.com/@yourpage" target="_blank" aria-label="TikTok">
+        <img src="../images/tiktok-icon.svg" alt="TikTok" />
+      </a>
+    </div>
+  </footer>
+
+  <!-- Filtering Script -->
+  <script src="../Sponsor-Files/sponsors.js"></script>
+</body>
+</html>

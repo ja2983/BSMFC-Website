@@ -1,0 +1,226 @@
+/* ─── Import Roboto Font ───────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+/* ─── Reset & Base Styles ─────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #000;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Navigation Header ───────────────────────────── */
+/* ─── Navigation ─── */
+header {
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  padding: 6px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ccc;
+}
+
+/* ─── Responsive Navigation ───────────────────────── */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 8px 0;
+  }
+}
+
+.contact-info {
+  text-align: center;
+  padding: 40px 20px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.contact-info a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.contact-info a:hover {
+  color: #444;
+}
+
+/* ─── Contact Section ─────────────────────────────── */
+.contact-section {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.map-section {
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+
+.map-container iframe {
+  width: 100%;       /* Fill the new container properly */
+  height: 1000px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ─── Footer ─────────────────────────────────────── */
+/* ─── Footer Section ─────────────────────────────── */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+footer p {
+  margin-bottom: 8px;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .social-icons a img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-icons a:hover img {
+  transform: scale(1.2);
+}
